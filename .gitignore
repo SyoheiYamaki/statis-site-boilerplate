@@ -1,0 +1,11 @@
+.vscode
+
+node_modules
+
+public/**/*.html
+
+public/img/**/*
+
+src/css/**/*.css
+
+src/lib/**/*.js
