@@ -2,10 +2,9 @@
 
 node_modules
 
-public/**/*.html
+public/**
 
-public/img/**/*
+src/css/**
+src/lib/**
 
-src/css/**/*.css
-
-src/lib/**/*.js
+!.gitkeep

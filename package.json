@@ -15,24 +15,26 @@
     "babel": "babel src/js/*.js --out-dir src/lib",
     "watch:sass": "node-sass -r src/scss  -o src/css --source-map-embed --output-style expanded -w",
     "watch:babel": "babel src/js --watch --out-dir src/lib",
+    "watch": "run-p sass watch:*",
     "lint:sass": "stylelint 'src/scss/**/*.scss' --fix",
     "lint:js": "eslint src/js/**/*.js --fix",
     "lint": "run-p lint:*",
     "sync": "browser-sync start -s './src' -w 'src/*.html' 'src/css/*.css' 'img/*' 'src/lib/*.js'",
-    "start": "run-p sync watch:*"
+    "standby": "run-p sync watch",
+    "start": "run-s sass standby"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.5",
-    "@babel/preset-env": "^7.1.5",
-    "autoprefixer": "^9.1.5",
-    "browser-sync": "^2.24.7",
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.26.3",
     "cpx": "^1.5.0",
-    "cssnano": "^4.1.0",
-    "eslint": "^5.9.0",
+    "cssnano": "^4.1.7",
+    "eslint": "^5.10.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -41,15 +43,15 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "inline-source": "^6.1.8",
-    "node-sass": "^4.9.3",
-    "npm-run-all": "^4.1.3",
-    "postcss-cli": "^6.0.0",
-    "prettier": "^1.15.2",
-    "stylelint": "^9.8.0",
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.0.1",
+    "prettier": "^1.15.3",
+    "stylelint": "^9.9.0",
     "stylelint-config-prettier": "^4.0.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-config-sass-guidelines": "^5.2.0",
-    "stylelint-prettier": "^1.0.4",
-    "stylelint-scss": "^3.4.0"
+    "stylelint-config-sass-guidelines": "^5.3.0",
+    "stylelint-prettier": "^1.0.5",
+    "stylelint-scss": "^3.4.1"
   }
 }
